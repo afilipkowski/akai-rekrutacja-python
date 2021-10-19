@@ -29,3 +29,24 @@ sentences = [
 
 
 # Good luck! You can write all the code in this file.
+word_count = dict()
+
+for sentence in range(len(sentences)):
+    words = sentences[sentence].split()
+    for w in words:
+        if w.lower() in word_count:
+            word_count[w.lower()] += 1
+        if w.lower() not in word_count:
+            word_count[w.lower()] = 1
+
+
+count_sorted = sorted(word_count, key=word_count.get, reverse=True)
+
+i = 1
+for x in count_sorted:
+    if i > 3:
+        break
+    else:
+        print(i, ". " ,x, "-", word_count[x])
+        i+=1
+

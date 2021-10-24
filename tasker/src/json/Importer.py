@@ -2,14 +2,15 @@ import json
 
 
 class Importer:
+    jlist = []
 
     def __init__(self):
-        pass
+        self.jlist=[]
 
     def read_tasks(self):
-        # TODO odczytaj plik i zdekoduj treść tutaj
-        pass
+        jfile = open("taski.json", "r", encoding="utf-8")
+        self.jlist = json.load(jfile)
+        
 
     def get_tasks(self):
-        # TODO zwróć zdekodowane taski tutaj
-        pass
+        return self.jlist
